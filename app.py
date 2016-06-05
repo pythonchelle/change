@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request
+from decimal import Decimal
 app = Flask(__name__)
 
 class Money:
   def __init__(self, amount):
-    self.amount=amount
+    self.amount=Decimal(amount)
 
-  def __repr(self):
-    return self.amount
+  def __repr__(self):
+    return ('%.2f' % self.amount)
 
 @app.route('/')
 def index():
