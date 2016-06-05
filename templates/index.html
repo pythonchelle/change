@@ -3,8 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>Money</title>
+  <style>
+    input[type=number]:invalid {
+      background-color: crimson;
+    }
+  </style>
 </head>
 <body>
-  <p>Hello World</p>
+  <p>Enter an amount between £0.01 and £1000.00</p>
+  <form action="{{url_for('money')}}" method="post">
+  £<input type="number" name="amount" value="1.00" min="0.01" max="1000" step="0.01" required>
+  <input type="submit">
+  </form>
 </body>
 </html>
