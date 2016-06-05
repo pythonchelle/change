@@ -6,5 +6,10 @@
 </head>
 <body>
   <p>Amount entered: £{{ money }}</p>
+  <ul>
+    {% for i in money.cash() %}
+    <li>{{ i }}</li>
+    {% endfor %}
+  <ul>
 </body>
 </html>
