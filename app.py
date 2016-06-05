@@ -4,10 +4,10 @@ app = Flask(__name__)
 
 class Money:
   def __init__(self, amount):
-    self.amount=Decimal(amount)
+    self.amount=int(Decimal(amount)*100)
 
   def __repr__(self):
-    return ('%.2f' % self.amount)
+    return str(self.amount/100.00)
 
 @app.route('/')
 def index():
