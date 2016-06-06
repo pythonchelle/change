@@ -28,6 +28,7 @@ class Money:
     remaining_total = self.amount
     for key in self.denominations:
       number_required = int(remaining_total/self.denominations[key])
-      cash[key] = number_required
+      if number_required > 0:
+        cash[key] = number_required
       remaining_total -= (self.denominations[key]*number_required)
     return cash
