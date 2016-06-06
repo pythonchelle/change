@@ -24,11 +24,10 @@ class Money:
     return amount[:-2] + '.' + amount[-2:]
 
   def cash(self):
-    cash = []
+    cash = OrderedDict()
     remaining_total = self.amount
     for key in self.denominations:
       number_required = int(remaining_total/self.denominations[key])
-      cash.append("{denomination}: {number_required}"
-                  .format(denomination=key, number_required=number_required))
+      cash[key] = number_required
       remaining_total -= (self.denominations[key]*number_required)
     return cash

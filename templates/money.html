@@ -6,10 +6,15 @@
 </head>
 <body>
   <p>Amount entered: £{{ money }}</p>
-  <ul>
-    {% for i in money.cash() %}
-    <li>{{ i }}</li>
-    {% endfor %}
-  <ul>
+  <table>
+    <thead>
+      <tr><th>Denomination</th><th>Number Required</th></tr>
+    </thead>
+    <tbody>
+      {% for key in money.cash() %}
+      <tr><td>{{ key }}</td><td>{{ money.cash()[key] }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </body>
 </html>
