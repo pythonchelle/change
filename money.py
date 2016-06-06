@@ -20,7 +20,8 @@ class Money:
     self.amount=int(Decimal(amount)*100)
 
   def __repr__(self):
-    return str(self.amount/100.00)
+    amount = str(self.amount)
+    return amount[:-2] + '.' + amount[-2:]
 
   def cash(self):
     cash = []
